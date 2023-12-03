@@ -1,0 +1,52 @@
+﻿@model kit19Task.Models.ProductSearchModel
+
+@{
+    ViewBag.Title = "Product Search";
+}
+
+<h2>Product Search</h2>
+
+@using (Html.BeginForm("SearchProducts", "Product", FormMethod.Post))
+{
+    <div>
+        <label for="ProductName">Product Name:</label>
+        @Html.TextBoxFor(model => model.ProductName)
+    </div>
+
+
+    <div>
+        <label for="Size">Size:</label>
+        @Html.TextBoxFor(model => model.Size)
+    </div>
+
+    <div>
+        <label for="Price">Price:</label>
+        @Html.TextBoxFor(model => model.Price)
+    </div>
+
+    <div>
+        <label for="MfgDate">Manufacturing Date:</label>
+        @Html.TextBoxFor(model => model.MfgDate, "{0:yyyy-MM-dd}", new { type = "date" })
+    </div>
+
+    <div>
+        <label for="Category">Category:</label>
+        @Html.TextBoxFor(model => model.Category)
+    </div>
+
+    <div>
+        <input type="submit" value="Search" />
+        <input type="button" value="Clear" onclick="clearForm()" />
+    </div>
+}
+
+<script>
+    function clearForm() {
+        // You can use JavaScript to clear the form fields.
+        document.getElementById("ProductName").value = "";
+        document.getElementById("Size").value = "";
+        document.getElementById("Price").value = "";
+        document.getElementById("MfgDate").value = "";
+        document.getElementById("Category").value = "";
+    }
+</script>

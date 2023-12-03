@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\kit19Task.props" />
+</Project>
